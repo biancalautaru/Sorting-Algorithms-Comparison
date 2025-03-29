@@ -5,14 +5,14 @@ ifstream fin("radix_sort.in");
 ofstream fout("radix_sort.out");
 
 void countingSort(vector<int> &v, const int exp, const int base) {
-	int f[base];
+	vector<int> f(base, 0);
 	for (int i = 0; i < base; i++)
 		f[i] = 0;
 	for (int i = 0; i < v.size(); i++)
 		f[(v[i] / exp) % base]++;
 	for (int i = 1; i < base; i++)
 		f[i] += f[i - 1];
-	int a[v.size()];
+	vector<int> a(v.size());
 	for (int i = v.size() - 1; i >= 0; i--) {
 		a[f[(v[i] / exp) % base] - 1] = v[i];
 		f[(v[i] / exp) % base]--;
