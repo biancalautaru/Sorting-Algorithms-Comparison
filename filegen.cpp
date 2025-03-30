@@ -106,27 +106,27 @@ std::vector<float> reversedFloat(const std::string &fileName, int n, float max) 
 ///--------------------------------------------------///
 
 ///----------------Almost Sorted-----------------------///
-std::vector<int> almostSortedInt(const std::string &fileName, int n, int max) {
-  std::ofstream file(fileName);
-  std::random_device rd;
-  std::mt19937 gen(rd());
-  std::vector<int> v;
-  int maxDiff = max / n;
-  std::uniform_int_distribution<int> dis(-(maxDiff), maxDiff;
-  for (int i = 0; i < n; i++) {
-    v.push_back();
-  }
-}
-
-std::vector<float> almostSortedFloat(const std::string &fileName, int n, float max) {
-  std::ofstream file(fileName);
-  std::random_device rd;
-  std::mt19937 gen(rd());
-  std::vector<float> v;
-  int maxDiff = max / n;
-  for (int i = 0; i < n; i++) {
-    v.push_back();
-  }
-}
+//std::vector<int> almostSortedInt(const std::string &fileName, int n, int max) {
+//  std::ofstream file(fileName);
+//  std::random_device rd;
+//  std::mt19937 gen(rd());
+//  std::vector<int> v;
+//  int maxDiff = max / n;
+//  std::uniform_int_distribution<int> dis(-(maxDiff), maxDiff;
+//  for (int i = 0; i < n; i++) {
+//    v.push_back();
+//  }
+//}
+//
+//std::vector<float> almostSortedFloat(const std::string &fileName, int n, float max) {
+//  std::ofstream file(fileName);
+//  std::random_device rd;
+//  std::mt19937 gen(rd());
+//  std::vector<float> v;
+//  int maxDiff = max / n;
+//  for (int i = 0; i < n; i++) {
+//    v.push_back();
+//  }
+//}
 
 ///----------------------------------------------------///
