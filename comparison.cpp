@@ -2,9 +2,8 @@
 #include <iomanip>
 #include <vector>
 #include <chrono>
+#include <random>
 using namespace std;
-ifstream fin("input.in");
-ofstream fout("output.out");
 
 void heapify(vector<int> &v, int n, int k) {
 	int st = 2 * k + 1;
@@ -35,48 +34,53 @@ void heapSort(vector<int> &v) {
 	}
 }
 
-int pivot(vector<int> &v, int st, int dr) {
-	int di = 0;
-	int dj = 1;
-	while (st < dr) {
-		if (v[st] > v[dr]) {
-			swap(v[st], v[dr]);
-			swap(di, dj);
-		}
-		st += di;
-		dr -= dj;
-	}
-	return st;
+int pivotMedianaDin3(vector<int> &v, int st, int dr) {
+	int mid = st + (dr - st) / 2;
+	if (v[dr] < v[st])
+		swap(v[st], v[dr]);
+	if (v[mid] < v[st])
+		swap(v[st], v[mid]);
+	if (v[dr] < v[mid])
+		swap(v[mid], v[dr]);
+	return mid;
 }
 
-int randomPivot(vector<int> &v, int st, int dr) {
+void quickSortMedianaDin3(vector<int> &v, int st, int dr) {
+	if (st < dr) {
+		int p = pivotMedianaDin3(v, st, dr);
+		int val = v[p];
+		swap(v[p], v[dr]);
+		int i = st - 1;
+		for (int j = st; j < dr; j++)
+			if (v[j] < val) {
+				i++;
+				swap(v[i], v[j]);
+			}
+		swap(v[i + 1], v[dr]);
+		quickSortMedianaDin3(v, st, i);
+		quickSortMedianaDin3(v, i + 2, dr);
+	}
+}
+
+int pivotRandom(vector<int> &v, int st, int dr) {
 	srand(time(NULL));
-	int p = st + rand() % (dr - st + 1);
-	int val = v[p];
-	swap(v[p], v[dr]);
-	int i = st - 1;
-	for (int j = st; j < dr; j++)
-		if (v[j] < val) {
-			i++;
-			swap(v[i], v[j]);
-		}
-	swap(v[i + 1], v[dr]);
-	return i + 1;
+	return st + rand() % (dr - st + 1);
 }
 
-void quickSort(vector<int> &v, int st, int dr) {
+void quickSortPivotRandom(vector<int> &v, int st, int dr) {
 	if (st < dr) {
-		int p = pivot(v, st, dr);
-		quickSort(v, st, p - 1);
-		quickSort(v, p + 1, dr);
-	}
-}
-
-void quickSortRandomPivot(vector<int> &v, int st, int dr) {
-	if (st < dr) {
-		int p = randomPivot(v, st, dr);
-		quickSortRandomPivot(v, st, p - 1);
-		quickSortRandomPivot(v, p + 1, dr);
+		int p = pivotRandom(v, st, dr);
+		int val = v[p];
+		swap(v[p], v[dr]);
+		int i = st - 1;
+		for (int j = st; j < dr; j++)
+			if (v[j] < val) {
+				i++;
+				swap(v[i], v[j]);
+			}
+		swap(v[i + 1], v[dr]);
+		quickSortPivotRandom(v, st, i);
+		quickSortPivotRandom(v, i + 2, dr);
 	}
 }
 
@@ -101,68 +105,112 @@ void radixSort(vector<int> &v, const int base) {
 	int maxi = v[0];
 	for (int i = 1; i < v.size(); i++)
 		maxi = max(maxi, v[i]);
-	for (long long exp = 1; maxi / exp > 0; exp *= base)
+	for (long long exp = 1; exp <= maxi; exp *= base)
 		countingSort(v, exp, base);
 }
 
+bool isSorted(vector<int> &v) {
+	for (int i = 1; i < v.size(); i++)
+		if (v[i - 1] > v[i])
+			return false;
+	return true;
+}
+
 int main() {
+	string inputFile;
+	ofstream fout("output.txt");
 	int n, maxi, x;
 	vector<int> a, v;
 	chrono::time_point<chrono::system_clock> start_time, end_time;
 	chrono::duration<double> time;
 
-	fin >> n >> maxi;
-	fout << "  N = " << n << "\n";
-	fout << "Max = " << maxi << "\n";
-	for (int i = 0; i < n; i++) {
-		fin >> x;
-		a.push_back(x);
-	}
-
 	fout << fixed << setprecision(10);
 
-	for (int i = 0; i < n; i++)
-		v.push_back(a[i]);
-	start_time = chrono::high_resolution_clock::now();
-	heapSort(v);
-	end_time = chrono::high_resolution_clock::now();
-	time = end_time - start_time;
-	fout << "                 Heap Sort:  " << time.count() << " secunde\n";
+	for (int fileNumber = 1; fileNumber <= 20; fileNumber++) {
+		if (fileNumber == 1)
+			fout << "                       - Random -\n\n";
+		else if (fileNumber == 6) {
+			fout << "-------------------------------------------------------\n\n";
+			fout << "                     - Few Unique -\n\n";
+		}
+		else if (fileNumber == 11) {
+			fout << "-------------------------------------------------------\n\n";
+			fout << "                    - Almost Sorted -\n\n";
+		}
+		else if (fileNumber == 16) {
+			fout << "-------------------------------------------------------\n\n";
+			fout << "                      - Reversed -\n\n";
+		}
 
-	v.clear();
-	for (int i = 0; i < n; i++)
-		v.push_back(a[i]);
-	start_time = chrono::high_resolution_clock::now();
-	quickSort(v, 0, n - 1);
-	end_time = chrono::high_resolution_clock::now();
-	time = end_time - start_time;
-	fout << "                Quick Sort:  " << time.count() << " secunde\n";
+		inputFile = "test" + to_string(1) + ".txt";
+		ifstream fin(inputFile);
+		fout << "------------------------ Test " << fileNumber << " ----------------------";
+		if (fileNumber < 10)
+			fout << "-\n\n";
+		else
+			fout << "\n\n";
 
-	v.clear();
-	for (int i = 0; i < n; i++)
-		v.push_back(a[i]);
-	start_time = chrono::high_resolution_clock::now();
-	quickSortRandomPivot(v, 0, n - 1);
-	end_time = chrono::high_resolution_clock::now();
-	time = end_time - start_time;
-	fout << "Quick Sort cu pivot random:  " << time.count() << " secunde\n";
+		fin >> n >> maxi;
+		fout << "                         N = " << n << "\n";
+		fout << "                       Max = " << maxi << "\n\n";
+		a.clear();
+		for (int i = 0; i < n; i++) {
+			fin >> x;
+			a.push_back(x);
+		}
 
-	v.clear();
-	for (int i = 0; i < n; i++)
-		v.push_back(a[i]);
-	start_time = chrono::high_resolution_clock::now();
-	radixSort(v, 10);
-	end_time = chrono::high_resolution_clock::now();
-	time = end_time - start_time;
-	fout << "     Radix Sort in baza 10:  " << time.count() << " secunde\n";
+		v = a;
+		start_time = chrono::high_resolution_clock::now();
+		heapSort(v);
+		end_time = chrono::high_resolution_clock::now();
+		time = end_time - start_time;
+		if (isSorted(v))
+			fout << "                        Heap Sort: " << time.count() << " secunde\n";
+		else
+			fout << "Heap Sort nu a sortat corect numerele!\n";
 
-	v.clear();
-	for (int i = 0; i < n; i++)
-		v.push_back(a[i]);
-	start_time = chrono::high_resolution_clock::now();
-	radixSort(v, 65536);
-	end_time = chrono::high_resolution_clock::now();
-	time = end_time - start_time;
-	fout << "   Radix Sort in baza 2^16:  " << time.count() << " secunde\n";
+		v = a;
+		start_time = chrono::high_resolution_clock::now();
+		quickSortMedianaDin3(v, 0, n - 1);
+		end_time = chrono::high_resolution_clock::now();
+		time = end_time - start_time;
+		if (isSorted(v))
+			fout << "Quick Sort cu pivot mediana din 3: " << time.count() << " secunde\n";
+		else
+			fout << "Quick Sort cu pivot mediana din 3 nu a sortat corect numerele!\n";
+
+		v = a;
+		start_time = chrono::high_resolution_clock::now();
+		quickSortPivotRandom(v, 0, n - 1);
+		end_time = chrono::high_resolution_clock::now();
+		time = end_time - start_time;
+		if (isSorted(v))
+			fout << "       Quick Sort cu pivot random: " << time.count() << " secunde\n";
+		else
+			fout << "Quick Sort cu pivot random nu a sortat corect numerele!\n";
+
+		v = a;
+		start_time = chrono::high_resolution_clock::now();
+		radixSort(v, 10);
+		end_time = chrono::high_resolution_clock::now();
+		time = end_time - start_time;
+		if (isSorted(v))
+			fout << "            Radix Sort in baza 10: " << time.count() << " secunde\n";
+		else
+			fout << "Radix Sort in baza 10 nu a sortat corect numerele!\n";
+
+		v = a;
+		start_time = chrono::high_resolution_clock::now();
+		radixSort(v, 65536);
+		end_time = chrono::high_resolution_clock::now();
+		time = end_time - start_time;
+		if (isSorted(v))
+			fout << "          Radix Sort in baza 2^16: " << time.count() << " secunde\n";
+		else
+			fout << "Radix Sort in baza 2^16 nu a sortat corect numerele!\n";
+
+		fout << "\n";
+	}
+	fout << "-------------------------------------------------------\n";
 	return 0;
 }
