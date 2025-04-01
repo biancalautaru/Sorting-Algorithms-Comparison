@@ -94,6 +94,7 @@ void countingSort(vector<int> &v, const int exp, const int base) {
 		f[i] += f[i - 1];
 	vector<int> a(v.size());
 	for (int i = v.size() - 1; i >= 0; i--) {
+		// cout << f[(v[i] / exp) % base] - 1;
 		a[f[(v[i] / exp) % base] - 1] = v[i];
 		f[(v[i] / exp) % base]--;
 	}
@@ -107,6 +108,72 @@ void radixSort(vector<int> &v, const int base) {
 		maxi = max(maxi, v[i]);
 	for (long long exp = 1; exp <= maxi; exp *= base)
 		countingSort(v, exp, base);
+}
+
+void merge(vector<int> &v, int left, int mid, int right) {
+	int n1 = mid - left + 1; // length of 1st aux vector
+	int n2 = right - mid; // length of 2nd aux vector
+	vector<int> L(n1), R(n2); // auxiliary vectors
+
+	for (int i = 0; i < n1; i++)
+		L[i] = v[left + i];
+	for (int i = 0; i < n2; i++)
+		R[i] = v[mid + 1 + i];
+
+	// merging the two halfs
+	int i = 0, j = 0, k = left;
+	while (i < n1 && j < n2) {
+		if (L[i] <= R[j])
+			v[k] = L[i], i++;
+		else
+			v[k] = R[j], j++;
+		k++;
+	}
+
+	while (i < n1) // remainder of left side
+		v[k] = L[i], i++, k++;
+	while (j < n2) // remainder of right side
+		v[k] = R[j], j++, k++;
+}
+
+void mergeSort(vector<int> &v, int left, int right) {
+	if (left >= right)
+		return;
+
+	int mid = (left + right) >> 1;
+	mergeSort(v, left, mid);
+	mergeSort(v, mid + 1, right);
+	merge(v, left, mid, right);
+}
+
+vector<int> generateTokudaSeq(int n) {
+	vector<int> gaps;
+	int k = 1;
+	while (true) {
+		int gap = ceil((pow(9, k) - pow(4, k)) / (5 * pow(4, k - 1)));
+		if (gap >= n) break;
+		gaps.push_back(gap);
+		k++;
+	}
+	reverse(gaps.begin(), gaps.end());
+	return gaps;
+}
+
+void shellSort(vector<int> &v) {
+	int n = v.size();
+	vector<int> gaps = generateTokudaSeq(n);
+
+	for (int gap : gaps) {
+		for (int i = gap; i < n; i++) {
+			float aux = v[i];
+			int j = i;
+			while (j >= gap && v[j - gap] > aux) {
+				v[j] = v[j - gap];
+				j -= gap;
+			}
+			v[j] = aux;
+		}
+	}
 }
 
 bool isSorted(vector<int> &v) {
@@ -126,33 +193,33 @@ int main() {
 
 	fout << fixed << setprecision(10);
 
-	for (int fileNumber = 1; fileNumber <= 20; fileNumber++) {
+	for (int fileNumber = 1; fileNumber <= 8; fileNumber++) {
 		if (fileNumber == 1)
-			fout << "                       - Random -\n\n";
-		else if (fileNumber == 6) {
-			fout << "-------------------------------------------------------\n\n";
-			fout << "                     - Few Unique -\n\n";
+			fout << "                        - Random -\n\n";
+		else if (fileNumber == 9) {
+			fout << "---------------------------------------------------------\n\n";
+			fout << "                      - Few Unique -\n\n";
 		}
-		else if (fileNumber == 11) {
-			fout << "-------------------------------------------------------\n\n";
-			fout << "                    - Almost Sorted -\n\n";
+		else if (fileNumber == 17) {
+			fout << "---------------------------------------------------------\n\n";
+			fout << "                     - Almost Sorted -\n\n";
 		}
-		else if (fileNumber == 16) {
-			fout << "-------------------------------------------------------\n\n";
-			fout << "                      - Reversed -\n\n";
+		else if (fileNumber == 25) {
+			fout << "---------------------------------------------------------\n\n";
+			fout << "                       - Reversed -\n\n";
 		}
 
-		inputFile = "test" + to_string(1) + ".txt";
+		inputFile = "teste/test" + to_string(fileNumber) + ".txt";
 		ifstream fin(inputFile);
-		fout << "------------------------ Test " << fileNumber << " ----------------------";
+		fout << "------------------------- Test " << fileNumber << " -----------------------";
 		if (fileNumber < 10)
 			fout << "-\n\n";
 		else
 			fout << "\n\n";
 
 		fin >> n >> maxi;
-		fout << "                         N = " << n << "\n";
-		fout << "                       Max = " << maxi << "\n\n";
+		fout << "                          N = " << n << "\n";
+		fout << "                        Max = " << maxi << "\n\n";
 		a.clear();
 		for (int i = 0; i < n; i++) {
 			fin >> x;
@@ -161,11 +228,21 @@ int main() {
 
 		v = a;
 		start_time = chrono::high_resolution_clock::now();
+		sort(v.begin(), v.end());
+		end_time = chrono::high_resolution_clock::now();
+		time = end_time - start_time;
+		if (isSorted(v))
+			fout << "                          STL Sort: " << time.count() << " secunde\n";
+		else
+			fout << "STL Sort nu a sortat corect numerele!\n";
+
+		v = a;
+		start_time = chrono::high_resolution_clock::now();
 		heapSort(v);
 		end_time = chrono::high_resolution_clock::now();
 		time = end_time - start_time;
 		if (isSorted(v))
-			fout << "                        Heap Sort: " << time.count() << " secunde\n";
+			fout << "                         Heap Sort: " << time.count() << " secunde\n";
 		else
 			fout << "Heap Sort nu a sortat corect numerele!\n";
 
@@ -175,7 +252,7 @@ int main() {
 		end_time = chrono::high_resolution_clock::now();
 		time = end_time - start_time;
 		if (isSorted(v))
-			fout << "Quick Sort cu pivot mediana din 3: " << time.count() << " secunde\n";
+			fout << " Quick Sort cu pivot mediana din 3: " << time.count() << " secunde\n";
 		else
 			fout << "Quick Sort cu pivot mediana din 3 nu a sortat corect numerele!\n";
 
@@ -185,7 +262,7 @@ int main() {
 		end_time = chrono::high_resolution_clock::now();
 		time = end_time - start_time;
 		if (isSorted(v))
-			fout << "       Quick Sort cu pivot random: " << time.count() << " secunde\n";
+			fout << "        Quick Sort cu pivot random: " << time.count() << " secunde\n";
 		else
 			fout << "Quick Sort cu pivot random nu a sortat corect numerele!\n";
 
@@ -195,7 +272,7 @@ int main() {
 		end_time = chrono::high_resolution_clock::now();
 		time = end_time - start_time;
 		if (isSorted(v))
-			fout << "            Radix Sort in baza 10: " << time.count() << " secunde\n";
+			fout << "             Radix Sort in baza 10: " << time.count() << " secunde\n";
 		else
 			fout << "Radix Sort in baza 10 nu a sortat corect numerele!\n";
 
@@ -205,12 +282,32 @@ int main() {
 		end_time = chrono::high_resolution_clock::now();
 		time = end_time - start_time;
 		if (isSorted(v))
-			fout << "          Radix Sort in baza 2^16: " << time.count() << " secunde\n";
+			fout << "           Radix Sort in baza 2^16: " << time.count() << " secunde\n";
 		else
 			fout << "Radix Sort in baza 2^16 nu a sortat corect numerele!\n";
 
+		v = a;
+		start_time = chrono::high_resolution_clock::now();
+		mergeSort(v, 0, n - 1);
+		end_time = chrono::high_resolution_clock::now();
+		time = end_time - start_time;
+		if (isSorted(v))
+			fout << "                        Merge Sort: " << time.count() << " secunde\n";
+		else
+			fout << "Merge Sort nu a sortat corect numerele!\n";
+
+		v = a;
+		start_time = chrono::high_resolution_clock::now();
+		shellSort(v);
+		end_time = chrono::high_resolution_clock::now();
+		time = end_time - start_time;
+		if (isSorted(v))
+			fout << "                        Shell Sort: " << time.count() << " secunde\n";
+		else
+			fout << "Shell Sort nu a sortat corect numerele!\n";
+
 		fout << "\n";
 	}
-	fout << "-------------------------------------------------------\n";
+	fout << "---------------------------------------------------------\n";
 	return 0;
 }
