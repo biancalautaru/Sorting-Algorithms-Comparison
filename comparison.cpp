@@ -3,9 +3,12 @@
 #include <vector>
 #include <chrono>
 #include <random>
+#include <algorithm>
 using namespace std;
 
-void heapify(vector<int> &v, int n, int k) {
+
+template <typename T>
+void heapify(vector<T> &v, int n, int k) {
 	int st = 2 * k + 1;
 	int dr = 2 * k + 2;
 	int p = k;
@@ -19,13 +22,15 @@ void heapify(vector<int> &v, int n, int k) {
 	}
 }
 
-void buildHeap(vector<int> &v) {
+template <typename T>
+void buildHeap(vector<T> &v) {
 	int n = v.size();
 	for (int i = n / 2 - 1; i >= 0; i--)
 		heapify(v, n, i);
 }
 
-void heapSort(vector<int> &v) {
+template <typename T>
+void heapSort(vector<T> &v) {
 	buildHeap(v);
 	int n = v.size();
 	for (int i = n - 1; i > 0; i--) {
@@ -34,7 +39,8 @@ void heapSort(vector<int> &v) {
 	}
 }
 
-int pivotMedianaDin3(vector<int> &v, int st, int dr) {
+template <typename T>
+int pivotMedianaDin3(vector<T> &v, int st, int dr) {
 	int mid = st + (dr - st) / 2;
 	if (v[dr] < v[st])
 		swap(v[st], v[dr]);
@@ -45,7 +51,8 @@ int pivotMedianaDin3(vector<int> &v, int st, int dr) {
 	return mid;
 }
 
-void quickSortMedianaDin3(vector<int> &v, int st, int dr) {
+template <typename T>
+void quickSortMedianaDin3(vector<T> &v, int st, int dr) {
 	if (st < dr) {
 		int p = pivotMedianaDin3(v, st, dr);
 		int val = v[p];
@@ -62,12 +69,14 @@ void quickSortMedianaDin3(vector<int> &v, int st, int dr) {
 	}
 }
 
-int pivotRandom(vector<int> &v, int st, int dr) {
+template <typename T>
+int pivotRandom(vector<T> &v, int st, int dr) {
 	srand(time(NULL));
 	return st + rand() % (dr - st + 1);
 }
 
-void quickSortPivotRandom(vector<int> &v, int st, int dr) {
+template <typename T>
+void quickSortPivotRandom(vector<T> &v, int st, int dr) {
 	if (st < dr) {
 		int p = pivotRandom(v, st, dr);
 		int val = v[p];
@@ -84,7 +93,8 @@ void quickSortPivotRandom(vector<int> &v, int st, int dr) {
 	}
 }
 
-void countingSort(vector<int> &v, const int exp, const int base) {
+template <typename T>
+void countingSort(vector<T> &v, const int exp, const int base) {
 	vector<int> f(base, 0);
 	for (int i = 0; i < base; i++)
 		f[i] = 0;
@@ -102,7 +112,8 @@ void countingSort(vector<int> &v, const int exp, const int base) {
 		v[i] = a[i];
 }
 
-void radixSort(vector<int> &v, const int base) {
+template <typename T>
+void radixSort(vector<T> &v, const int base) {
 	int maxi = v[0];
 	for (int i = 1; i < v.size(); i++)
 		maxi = max(maxi, v[i]);
@@ -110,10 +121,11 @@ void radixSort(vector<int> &v, const int base) {
 		countingSort(v, exp, base);
 }
 
-void merge(vector<int> &v, int left, int mid, int right) {
+template <typename T>
+void merge(vector<T> &v, int left, int mid, int right) {
 	int n1 = mid - left + 1; // length of 1st aux vector
 	int n2 = right - mid; // length of 2nd aux vector
-	vector<int> L(n1), R(n2); // auxiliary vectors
+	vector<T> L(n1), R(n2); // auxiliary vectors
 
 	for (int i = 0; i < n1; i++)
 		L[i] = v[left + i];
@@ -136,7 +148,8 @@ void merge(vector<int> &v, int left, int mid, int right) {
 		v[k] = R[j], j++, k++;
 }
 
-void mergeSort(vector<int> &v, int left, int right) {
+template <typename T>
+void mergeSort(vector<T> &v, int left, int right) {
 	if (left >= right)
 		return;
 
@@ -159,7 +172,8 @@ vector<int> generateTokudaSeq(int n) {
 	return gaps;
 }
 
-void shellSort(vector<int> &v) {
+template <typename T>
+void shellSort(vector<T> &v) {
 	int n = v.size();
 	vector<int> gaps = generateTokudaSeq(n);
 
@@ -176,7 +190,16 @@ void shellSort(vector<int> &v) {
 	}
 }
 
-bool isSorted(vector<int> &v) {
+template <typename T>
+void bubbleSort(vector<T> &v) {
+	for (int i = 0; i < v.size(); i++)
+		for (int j = 0; j < v.size() - i - 1; j++)
+			if (v[j] > v[j + 1])
+				swap(v[j], v[j + 1]);
+}
+
+template <typename T>
+bool isSorted(vector<T> &v) {
 	for (int i = 1; i < v.size(); i++)
 		if (v[i - 1] > v[i])
 			return false;
