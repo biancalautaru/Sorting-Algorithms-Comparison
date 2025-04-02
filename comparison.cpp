@@ -111,16 +111,15 @@ void radixSort(vector<int> &v, const int base) {
 }
 
 void merge(vector<int> &v, int left, int mid, int right) {
-	int n1 = mid - left + 1; // length of 1st aux vector
-	int n2 = right - mid; // length of 2nd aux vector
-	vector<int> L(n1), R(n2); // auxiliary vectors
+	int n1 = mid - left + 1;
+	int n2 = right - mid;
+	vector<int> L(n1), R(n2);
 
 	for (int i = 0; i < n1; i++)
 		L[i] = v[left + i];
 	for (int i = 0; i < n2; i++)
 		R[i] = v[mid + 1 + i];
 
-	// merging the two halfs
 	int i = 0, j = 0, k = left;
 	while (i < n1 && j < n2) {
 		if (L[i] <= R[j])
@@ -130,9 +129,9 @@ void merge(vector<int> &v, int left, int mid, int right) {
 		k++;
 	}
 
-	while (i < n1) // remainder of left side
+	while (i < n1)
 		v[k] = L[i], i++, k++;
-	while (j < n2) // remainder of right side
+	while (j < n2)
 		v[k] = R[j], j++, k++;
 }
 
@@ -282,6 +281,22 @@ int main() {
 			fin >> x;
 			a.push_back(x);
 		}
+
+		v = a;
+		start_time = chrono::high_resolution_clock::now();
+		sort(v.begin(), v.end());
+		end_time = chrono::high_resolution_clock::now();
+		time = end_time - start_time;
+		if (isSorted(v)) {
+			fout << "                         STL Sort: ";
+			if (time.count() < 10)
+				fout << " ";
+			if (time.count() < 100)
+				fout << " ";
+			fout << time.count() << " secunde\n";
+		}
+		else
+			fout << "STL Sort nu a sortat corect numerele!\n";
 
 		if (n <= 100000) {
 			v = a;
