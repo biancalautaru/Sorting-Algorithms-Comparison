@@ -193,7 +193,7 @@ bool isSorted(vector<float> &v) {
 int main() {
 	int testsType, firstFile, lastFile;
 
-	cout << "1. random\n2. few unique\n3. almost sorted\n4. reversed\n";
+	cout << "1. random\n2. few unique\n3. reversed\n4. almost sorted\n";
 	cin >> testsType;
 
 	if (testsType == 1) {
@@ -225,9 +225,9 @@ int main() {
 			outputFile = "results/resultsFewUniqueFloat.txt";
 		else
 			if (testsType == 3)
-				outputFile = "results/resultsAlmostSortedFloat.txt";
-			else
 				outputFile = "results/resultsReversedFloat.txt";
+			else
+				outputFile = "results/resultsAlmostSortedFloat.txt";
 
 	ofstream fout(outputFile);
 	fout << fixed << setprecision(10);
@@ -288,7 +288,7 @@ int main() {
 				fout << "Bubble Sort nu a sortat corect numerele!\n";
 		}
 
-		if (testsType == 1 || testsType == 4 || n <= 100000) {
+		if (testsType == 1 || n <= 100000) {
 			v = a;
 			start_time = chrono::high_resolution_clock::now();
 			quickSortMedianaDin3(v, 0, n - 1);

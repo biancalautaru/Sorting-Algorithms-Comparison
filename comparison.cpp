@@ -218,7 +218,7 @@ bool isSorted(vector<int> &v) {
 int main() {
 	int testsType, firstFile, lastFile;
 
-	cout << "1. random\n2. few unique\n3. almost sorted\n4. reversed\n";
+	cout << "1. random\n2. few unique\n3. reversed\n4. almost sorted\n";
 	cin >> testsType;
 
 	if (testsType == 1) {
@@ -250,9 +250,9 @@ int main() {
 			outputFile = "results/resultsFewUnique.txt";
 		else
 			if (testsType == 3)
-				outputFile = "results/resultsAlmostSorted.txt";
-			else
 				outputFile = "results/resultsReversed.txt";
+			else
+				outputFile = "results/resultsAlmostSorted.txt";
 
 	ofstream fout(outputFile);
 	fout << fixed << setprecision(10);
