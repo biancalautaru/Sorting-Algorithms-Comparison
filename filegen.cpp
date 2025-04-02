@@ -5,6 +5,7 @@
 #include <vector>
 #include <algorithm>
 #include <cmath>
+#include <type_traits>
 #include "filegen.hpp"
 
 ///--------------------------------------RANDOM-------------------------------------///
@@ -41,37 +42,21 @@ std::vector<float> randomFloat(std::string fileName, int n, float max) {        
 
 
 ///------------------------------------FEW UNIQUE-----------------------------------///
-std::vector<int> fewUniqueInt(std::string fileName, int n, int max) {               ///
+template <typename T>                                                               ///
+std::vector<T> fewUnique(std::string fileName, int n, T max) {                      ///
   std::ofstream file(fileName);                                                     ///
   std::random_device rd;                                                            ///
   std::mt19937 gen(rd());                                                           ///
-  std::vector<int> v;                                                               ///
-  std::uniform_int_distribution<int> dis(0, max);                                   ///
-  int uniq;                                                                         ///
-  for (int i = 0; i < 1000; i++) {                                                  ///
+  std::vector<T> v;                                                                 ///
+  std::uniform_real_distribution<float> dis(0, max);                                ///
+  int uniqNum = n / log(n);                                                         ///
+  T uniq;                                                                           ///
+  for (int i = 0; i < uniqNum; i++) {                                               ///
     uniq = dis(gen);                                                                ///
-    for(int j = 0; j < n / 1000; j++)                                               ///
+    for(int j = 0; j < n / uniqNum; j++)                                            ///
       v.push_back(uniq);                                                            ///
   }                                                                                 ///
-  for (auto i : v)                                                                  ///
-    file << i << " ";                                                               ///
-  file.close();                                                                     ///
-  std::cout << "file " << fileName << " succesfully created" << std::endl;          ///
-  return v;                                                                         ///
-}                                                                                   ///
-///---------------------------------------------------------------------------------///
-std::vector<float> fewUniqueFloat(std::string fileName, int n, float max) {         ///
-  std::ofstream file(fileName);                                                     ///
-  std::random_device rd;                                                            ///
-  std::mt19937 gen(rd());                                                           ///
-  std::vector<float> v;                                                             ///
-  std::uniform_real_distribution<float> dis(-max, max);                             ///
-  float uniq;                                                                       ///
-  for (int i = 0; i < 1000; i++) {                                                  ///
-    uniq = dis(gen);                                                                ///
-    for(int j = 0; j < n / 1000; j++)                                               ///
-      v.push_back(uniq);                                                            ///
-  }                                                                                 ///
+  std::shuffle(v.begin(), v.end(), gen);                                            ///                                                                         ///
   for (auto i : v)                                                                  ///
     file << i << " ";                                                               ///
   file.close();                                                                     ///
