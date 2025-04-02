@@ -9,6 +9,40 @@
 using namespace std;
 using namespace std::chrono;
 
+/////////////////////////sectiunea aceasta de copiat//////////////////////////////////////////
+const int RUN = 32;
+
+template <typename T>
+void insertionSort(std::vector<T>& v, int left, int right) {
+    for (int i = left + 1; i <= right; i++) {
+        T temp = v[i];
+        int j = i - 1;
+        while (j >= left && v[j] > temp) {
+            v[j + 1] = v[j];
+            j--;
+        }
+        v[j + 1] = temp;
+    }
+}
+
+template <typename T>
+void timSort(std::vector<T>& v, int n) {
+    for (int i = 0; i < n; i += RUN) {
+        insertionSort(v, i, std::min(i + RUN - 1, n - 1));
+    }
+    for (int size = RUN; size < n; size = 2 * size) {
+        for (int left = 0; left < n; left += 2 * size) {
+            int mid = left + size - 1;
+            int right = std::min(left + 2 * size - 1, n - 1);
+            if (mid < right)
+                merge(v, left, mid, right);
+        }
+    }
+}
+//////////////////////////////////////////////////////////////////////////////////////////
+
+
+
 void processFileName(string &filename, int n, int max) { filename += '_' + to_string(n) + '_' + to_string(max); }
 
 string pft(string filename, string type) { filename += '_' + type; return filename; }
