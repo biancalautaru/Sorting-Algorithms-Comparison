@@ -1,0 +1,122 @@
+-------------------------- Test 61 ----------------------
+
+                           N = 1000
+                         Max = 1000
+
+                         STL Sort:   0.0000464000 secunde
+                      Bubble Sort:   0.0044801000 secunde
+Quick Sort cu pivot mediana din 3:   0.0000712000 secunde
+       Quick Sort cu pivot random:   0.0000735000 secunde
+                        Heap Sort:   0.0001251000 secunde
+                       Merge Sort:   0.0001905000 secunde
+                       Shell Sort:   0.0000466000 secunde
+                         Tim Sort:   0.0000955000 secunde
+
+-------------------------- Test 62 ----------------------
+
+                           N = 1000
+                         Max = 2000000000
+
+                         STL Sort:   0.0000491000 secunde
+                      Bubble Sort:   0.0044421000 secunde
+Quick Sort cu pivot mediana din 3:   0.0000640000 secunde
+       Quick Sort cu pivot random:   0.0000668000 secunde
+                        Heap Sort:   0.0001166000 secunde
+                       Merge Sort:   0.0001818000 secunde
+                       Shell Sort:   0.0000473000 secunde
+                         Tim Sort:   0.0000916000 secunde
+
+-------------------------- Test 63 ----------------------
+
+                           N = 100000
+                         Max = 100000
+
+                         STL Sort:   0.0062567000 secunde
+                      Bubble Sort:  46.3312866000 secunde
+Quick Sort cu pivot mediana din 3:   0.0111943000 secunde
+       Quick Sort cu pivot random:   0.0110764000 secunde
+                        Heap Sort:   0.0194501000 secunde
+                       Merge Sort:   0.0247877000 secunde
+                       Shell Sort:   0.0060694000 secunde
+                         Tim Sort:   0.0125422000 secunde
+
+-------------------------- Test 64 ----------------------
+
+                           N = 100000
+                         Max = 2000000000
+
+                         STL Sort:   0.0061704000 secunde
+                      Bubble Sort:  47.6224016000 secunde
+Quick Sort cu pivot mediana din 3:   0.0114531000 secunde
+       Quick Sort cu pivot random:   0.0118939000 secunde
+                        Heap Sort:   0.0191379000 secunde
+                       Merge Sort:   0.0208430000 secunde
+                       Shell Sort:   0.0062603000 secunde
+                         Tim Sort:   0.0122553000 secunde
+
+-------------------------- Test 65 ----------------------
+
+                           N = 1000000
+                         Max = 1000000
+
+                         STL Sort:   0.0718203000 secunde
+                        Heap Sort:   0.2287006000 secunde
+                       Merge Sort:   0.2252807000 secunde
+                       Shell Sort:   0.0755111000 secunde
+                         Tim Sort:   0.1377541000 secunde
+
+-------------------------- Test 66 ----------------------
+
+                           N = 1000000
+                         Max = 2000000000
+
+                         STL Sort:   0.0797648000 secunde
+                        Heap Sort:   0.2327444000 secunde
+                       Merge Sort:   0.2423225000 secunde
+                       Shell Sort:   0.0773188000 secunde
+                         Tim Sort:   0.1399129000 secunde
+
+-------------------------- Test 67 ----------------------
+
+                           N = 10000000
+                         Max = 100000000
+
+                         STL Sort:   0.9263142000 secunde
+                        Heap Sort:   2.6005847000 secunde
+                       Merge Sort:   2.4895653000 secunde
+                       Shell Sort:   0.8226987000 secunde
+                         Tim Sort:   1.4746559000 secunde
+
+-------------------------- Test 68 ----------------------
+
+                           N = 10000000
+                         Max = 2000000000
+
+                         STL Sort:   0.9887651000 secunde
+                        Heap Sort:   2.5936325000 secunde
+                       Merge Sort:   2.4555247000 secunde
+                       Shell Sort:   0.7983372000 secunde
+                         Tim Sort:   1.4885295000 secunde
+
+-------------------------- Test 69 ----------------------
+
+                           N = 100000000
+                         Max = 100000000
+
+                         STL Sort:  29.4251697000 secunde
+                        Heap Sort:   1.9905535000 secunde
+                       Merge Sort:  35.7323603000 secunde
+                       Shell Sort:   8.2284805000 secunde
+                         Tim Sort:  14.3093651000 secunde
+
+-------------------------- Test 70 ----------------------
+
+                           N = 100000000
+                         Max = 2000000000
+
+                         STL Sort:  24.6550122000 secunde
+                        Heap Sort:   1.5093805000 secunde
+                       Merge Sort:  25.8627902000 secunde
+                       Shell Sort:   6.4232162000 secunde
+                         Tim Sort:  12.6062713000 secunde
+
