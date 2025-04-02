@@ -6,7 +6,7 @@
 
 ///----------------------------------------------------------------------///
 /// it is assumed that for the "Reversed" and "Almost Sorted" generators,///
-///     argument 'n' will always have a greater value than 'max'         ///
+///     argument 'max' will always have a greater value than 'n'         ///
 ///----------------------------------------------------------------------///
 
 ///     generates a set of 'n' random integers;
@@ -21,14 +21,10 @@ std::vector<float> randomFloat(std::string fileName, int n, float max);
 ///---------------------------------------------------------------------------------
 
 ///     generates a set of 'n' repetitive integers,
-/// having hardcoded a number of 1000 unique integers 
-/// that are from the [-max, max] interval;
-/// so, the algorithm will generate a number of n / 1000 repetitions
-/// for each unique number.
-std::vector<int> fewUniqueInt(std::string fileName, int n, int max);
-
-/// same logic applied for the fewUniqueInt generator, but with real numbers
-std::vector<float> fewUniqueFloat(std::string fileName, int n, float max);
+/// having hardcoded a number of n / log(n) unique numbers
+/// that are from the [0, max] interval;
+template <typename T>
+std::vector<T> fewUnique(std::string fileName, int n, T max);
 
 ///---------------------------------------------------------------------------------
 
