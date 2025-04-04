@@ -1,0 +1,260 @@
+41,STL Sort,Random,0.000118
+41,Bubble Sort,Random,0.0031191
+41,Quick Sort pivot 3,Random,9.45e-05
+41,Quick Sort pivot random,Random,0.0001106
+41,Heap Sort,Random,0.0001521
+41,Merge Sort,Random,0.000285
+41,Shell Sort,Random,0.0001129
+41,Tim Sort,Random,0.0001132
+42,STL Sort,Random,0.0001222
+42,Bubble Sort,Random,0.0032166
+42,Quick Sort pivot 3,Random,9.7e-05
+42,Quick Sort pivot random,Random,0.0001036
+42,Heap Sort,Random,0.0001589
+42,Merge Sort,Random,0.0002707
+42,Shell Sort,Random,0.0001141
+42,Tim Sort,Random,0.0001043
+43,STL Sort,Random,0.0197307
+43,Bubble Sort,Random,39.9726
+43,Quick Sort pivot 3,Random,0.0146522
+43,Quick Sort pivot random,Random,0.0151176
+43,Heap Sort,Random,0.026534
+43,Merge Sort,Random,0.0347738
+43,Shell Sort,Random,0.0207877
+43,Tim Sort,Random,0.0197152
+44,STL Sort,Random,0.0181514
+44,Bubble Sort,Random,39.5713
+44,Quick Sort pivot 3,Random,0.0140145
+44,Quick Sort pivot random,Random,0.0153955
+44,Heap Sort,Random,0.0257577
+44,Merge Sort,Random,0.0333561
+44,Shell Sort,Random,0.0213067
+44,Tim Sort,Random,0.0178551
+45,STL Sort,Random,0.210551
+45,Quick Sort pivot 3,Random,0.170888
+45,Quick Sort pivot random,Random,0.181003
+45,Heap Sort,Random,0.323473
+45,Merge Sort,Random,0.376527
+45,Shell Sort,Random,0.262137
+45,Tim Sort,Random,0.21246
+46,STL Sort,Random,0.209369
+46,Quick Sort pivot 3,Random,0.167413
+46,Quick Sort pivot random,Random,0.181645
+46,Heap Sort,Random,0.324708
+46,Merge Sort,Random,0.37029
+46,Shell Sort,Random,0.266638
+46,Tim Sort,Random,0.213154
+47,STL Sort,Random,2.71504
+47,Quick Sort pivot 3,Random,2.20848
+47,Quick Sort pivot random,Random,2.49634
+47,Heap Sort,Random,6.00106
+47,Merge Sort,Random,5.33869
+47,Shell Sort,Random,3.70641
+47,Tim Sort,Random,3.09432
+48,STL Sort,Random,2.46497
+48,Quick Sort pivot 3,Random,2.01235
+48,Quick Sort pivot random,Random,2.22769
+48,Heap Sort,Random,4.72553
+48,Merge Sort,Random,4.21165
+48,Shell Sort,Random,3.10249
+48,Tim Sort,Random,2.65688
+49,STL Sort,Random,26.0932
+49,Quick Sort pivot 3,Random,23.3963
+49,Quick Sort pivot random,Random,25.0629
+49,Heap Sort,Random,63.2058
+49,Merge Sort,Random,44.9386
+49,Shell Sort,Random,34.727
+49,Tim Sort,Random,28.3777
+50,STL Sort,Random,25.6042
+50,Quick Sort pivot 3,Random,27.7072
+50,Quick Sort pivot random,Random,30.681
+50,Heap Sort,Random,63.0558
+50,Merge Sort,Random,43.9797
+50,Shell Sort,Random,33.1693
+50,Tim Sort,Random,27.4946
+51,STL Sort,Few Unique,0.000105
+51,Bubble Sort,Few Unique,0.0029336
+51,Quick Sort pivot 3,Few Unique,9.39e-05
+51,Quick Sort pivot random,Few Unique,0.0001092
+51,Heap Sort,Few Unique,0.0001506
+51,Merge Sort,Few Unique,0.0002495
+51,Shell Sort,Few Unique,9.73e-05
+51,Tim Sort,Few Unique,0.0001032
+52,STL Sort,Few Unique,0.0001118
+52,Bubble Sort,Few Unique,0.0031942
+52,Quick Sort pivot 3,Few Unique,9.65e-05
+52,Quick Sort pivot random,Few Unique,0.0001106
+52,Heap Sort,Few Unique,0.00015
+52,Merge Sort,Few Unique,0.0002344
+52,Shell Sort,Few Unique,9.31e-05
+52,Tim Sort,Few Unique,9.49e-05
+53,STL Sort,Few Unique,0.0156487
+53,Bubble Sort,Few Unique,39.5005
+53,Quick Sort pivot 3,Few Unique,0.0247265
+53,Quick Sort pivot random,Few Unique,0.0286777
+53,Heap Sort,Few Unique,0.0265788
+53,Merge Sort,Few Unique,0.0311913
+53,Shell Sort,Few Unique,0.0194357
+53,Tim Sort,Few Unique,0.0175844
+54,STL Sort,Few Unique,0.0166571
+54,Bubble Sort,Few Unique,44.736
+54,Quick Sort pivot 3,Few Unique,0.0445046
+54,Quick Sort pivot random,Few Unique,0.0420088
+54,Heap Sort,Few Unique,0.0271224
+54,Merge Sort,Few Unique,0.0559249
+54,Shell Sort,Few Unique,0.0287184
+54,Tim Sort,Few Unique,0.0220528
+55,STL Sort,Few Unique,0.259743
+55,Heap Sort,Few Unique,0.408295
+55,Merge Sort,Few Unique,0.405357
+55,Shell Sort,Few Unique,0.324468
+55,Tim Sort,Few Unique,0.268591
+56,STL Sort,Few Unique,0.267346
+56,Heap Sort,Few Unique,0.413606
+56,Merge Sort,Few Unique,0.491847
+56,Shell Sort,Few Unique,0.339961
+56,Tim Sort,Few Unique,0.243644
+57,STL Sort,Few Unique,2.92763
+57,Heap Sort,Few Unique,5.80468
+57,Merge Sort,Few Unique,4.93563
+57,Shell Sort,Few Unique,3.90233
+57,Tim Sort,Few Unique,3.25112
+58,STL Sort,Few Unique,3.00708
+58,Heap Sort,Few Unique,5.92879
+58,Merge Sort,Few Unique,5.12646
+58,Shell Sort,Few Unique,3.7536
+58,Tim Sort,Few Unique,3.29836
+59,STL Sort,Few Unique,25.8524
+59,Heap Sort,Few Unique,67.0095
+59,Merge Sort,Few Unique,50.0787
+59,Shell Sort,Few Unique,38.2894
+59,Tim Sort,Few Unique,34.5532
+60,STL Sort,Few Unique,31.7032
+60,Heap Sort,Few Unique,77.5058
+60,Merge Sort,Few Unique,49.3803
+60,Shell Sort,Few Unique,30.3889
+60,Tim Sort,Few Unique,25.0262
+61,STL Sort,Reversed,4.69e-05
+61,Bubble Sort,Reversed,0.0044426
+61,Quick Sort pivot 3,Reversed,0.0001
+61,Quick Sort pivot random,Reversed,8.74e-05
+61,Heap Sort,Reversed,0.0001319
+61,Merge Sort,Reversed,0.0001954
+61,Shell Sort,Reversed,4.46e-05
+61,Tim Sort,Reversed,9.68e-05
+62,STL Sort,Reversed,7.69e-05
+62,Bubble Sort,Reversed,0.0042154
+62,Quick Sort pivot 3,Reversed,7.05e-05
+62,Quick Sort pivot random,Reversed,7.22e-05
+62,Heap Sort,Reversed,0.0001354
+62,Merge Sort,Reversed,0.0001835
+62,Shell Sort,Reversed,4.66e-05
+62,Tim Sort,Reversed,9.86e-05
+63,STL Sort,Reversed,0.0064876
+63,Bubble Sort,Reversed,43.4224
+63,Quick Sort pivot 3,Reversed,0.0126419
+63,Quick Sort pivot random,Reversed,0.0099402
+63,Heap Sort,Reversed,0.0213258
+63,Merge Sort,Reversed,0.0221345
+63,Shell Sort,Reversed,0.007858
+63,Tim Sort,Reversed,0.0129979
+64,STL Sort,Reversed,0.0072233
+64,Bubble Sort,Reversed,52.3779
+64,Quick Sort pivot 3,Reversed,0.012675
+64,Quick Sort pivot random,Reversed,0.010219
+64,Heap Sort,Reversed,0.0222556
+64,Merge Sort,Reversed,0.0226426
+64,Shell Sort,Reversed,0.0066305
+64,Tim Sort,Reversed,0.0234502
+65,STL Sort,Reversed,0.118575
+65,Heap Sort,Reversed,0.311374
+65,Merge Sort,Reversed,0.370879
+65,Shell Sort,Reversed,0.103382
+65,Tim Sort,Reversed,0.14994
+66,STL Sort,Reversed,0.112292
+66,Heap Sort,Reversed,0.376827
+66,Merge Sort,Reversed,0.275618
+66,Shell Sort,Reversed,0.137657
+66,Tim Sort,Reversed,0.173874
+67,STL Sort,Reversed,1.22747
+67,Heap Sort,Reversed,3.64132
+67,Merge Sort,Reversed,3.69852
+67,Shell Sort,Reversed,1.04109
+67,Tim Sort,Reversed,1.9787
+68,STL Sort,Reversed,1.26682
+68,Heap Sort,Reversed,3.43916
+68,Merge Sort,Reversed,3.5297
+68,Shell Sort,Reversed,1.12877
+68,Tim Sort,Reversed,1.91641
+69,STL Sort,Reversed,23.3828
+69,Heap Sort,Reversed,1.50971
+69,Merge Sort,Reversed,25.8094
+69,Shell Sort,Reversed,6.55473
+69,Tim Sort,Reversed,12.4882
+70,STL Sort,Reversed,23.6129
+70,Heap Sort,Reversed,1.50689
+70,Merge Sort,Reversed,25.7433
+70,Shell Sort,Reversed,6.25996
+70,Tim Sort,Reversed,12.231
+71,STL Sort,Almost Sorted,7.54e-05
+71,Bubble Sort,Almost Sorted,0.0016631
+71,Quick Sort pivot 3,Almost Sorted,6.35e-05
+71,Quick Sort pivot random,Almost Sorted,0.0001016
+71,Heap Sort,Almost Sorted,0.0001942
+71,Merge Sort,Almost Sorted,0.000259
+71,Shell Sort,Almost Sorted,3.11e-05
+71,Tim Sort,Almost Sorted,5.26e-05
+72,STL Sort,Almost Sorted,6.01e-05
+72,Bubble Sort,Almost Sorted,0.0014034
+72,Quick Sort pivot 3,Almost Sorted,5.23e-05
+72,Quick Sort pivot random,Almost Sorted,7.18e-05
+72,Heap Sort,Almost Sorted,0.0001462
+72,Merge Sort,Almost Sorted,0.0002068
+72,Shell Sort,Almost Sorted,3.32e-05
+72,Tim Sort,Almost Sorted,5.04e-05
+73,STL Sort,Almost Sorted,0.0089814
+73,Bubble Sort,Almost Sorted,13.4969
+73,Quick Sort pivot 3,Almost Sorted,0.00637
+73,Quick Sort pivot random,Almost Sorted,0.0095751
+73,Heap Sort,Almost Sorted,0.0221029
+73,Merge Sort,Almost Sorted,0.0223526
+73,Shell Sort,Almost Sorted,0.0041636
+73,Tim Sort,Almost Sorted,0.0087252
+74,STL Sort,Almost Sorted,0.0078169
+74,Bubble Sort,Almost Sorted,13.6456
+74,Quick Sort pivot 3,Almost Sorted,0.0066587
+74,Quick Sort pivot random,Almost Sorted,0.0098296
+74,Heap Sort,Almost Sorted,0.0215685
+74,Merge Sort,Almost Sorted,0.0210203
+74,Shell Sort,Almost Sorted,0.0039213
+74,Tim Sort,Almost Sorted,0.0076449
+75,STL Sort,Almost Sorted,0.0892468
+75,Heap Sort,Almost Sorted,0.259113
+75,Merge Sort,Almost Sorted,0.235589
+75,Shell Sort,Almost Sorted,0.050996
+75,Tim Sort,Almost Sorted,0.0925418
+76,STL Sort,Almost Sorted,0.0833036
+76,Heap Sort,Almost Sorted,0.250372
+76,Merge Sort,Almost Sorted,0.224689
+76,Shell Sort,Almost Sorted,0.0484492
+76,Tim Sort,Almost Sorted,0.0883626
+77,STL Sort,Almost Sorted,0.882768
+77,Heap Sort,Almost Sorted,2.9283
+77,Merge Sort,Almost Sorted,2.452
+77,Shell Sort,Almost Sorted,0.553002
+77,Tim Sort,Almost Sorted,1.09178
+78,STL Sort,Almost Sorted,0.901749
+78,Heap Sort,Almost Sorted,2.80598
+78,Merge Sort,Almost Sorted,2.44749
+78,Shell Sort,Almost Sorted,0.553181
+78,Tim Sort,Almost Sorted,1.07557
+79,STL Sort,Almost Sorted,26.9103
+79,Heap Sort,Almost Sorted,21.5075
+79,Merge Sort,Almost Sorted,32.2114
+79,Shell Sort,Almost Sorted,8.16808
+79,Tim Sort,Almost Sorted,12.489
+80,STL Sort,Almost Sorted,24.1819
+80,Heap Sort,Almost Sorted,29.9582
+80,Merge Sort,Almost Sorted,35.2169
+80,Shell Sort,Almost Sorted,8.29002
+80,Tim Sort,Almost Sorted,14.944
