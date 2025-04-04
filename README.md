@@ -1,5 +1,5 @@
 # 📌 Sorting Algorithms Comparison
-*(project by Lăutaru Bianca-Maria)*
+*(project by Lăutaru Bianca-Maria and Cocu Matei-Iulian)*
 
 The following **C++ implementation** provides six different approaches for sorting various types of numerical vectors, alongside a source file that implements the **generation of the numbers** used.
 
@@ -126,6 +126,3 @@ Using the **Mersenne Twister 19937 generator (`mt19937`)**, an instantiation of 
 - **CSV File**: Stores execution times per test.
 
 ---
-
-💡 **Thank you for checking out this implementation! 🚀**
-
