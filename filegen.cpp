@@ -59,7 +59,7 @@ std::vector<T> fewUnique(std::string fileName, int n, T max) {                  
       for(int j = 0; j < n / uniqNum; j++)                                          ///
         v.push_back(uniq);                                                          ///
     }                                                                               ///
-    std::shuffle(v.begin(), v.end(), gen);                                          ///                                                                         ///
+    std::shuffle(v.begin(), v.end(), gen);                                          ///
     for (auto i : v)                                                                ///
       file << i << " ";                                                             ///
     file.close();                                                                   ///
