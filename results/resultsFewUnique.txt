@@ -3,140 +3,140 @@
                            N = 1000
                          Max = 1000
 
-                         STL Sort:   0.0001528000 secunde
-                      Bubble Sort:   0.0033552000 secunde
-Quick Sort cu pivot mediana din 3:   0.0000977000 secunde
-       Quick Sort cu pivot random:   0.0001139000 secunde
-                        Heap Sort:   0.0001509000 secunde
-                       Merge Sort:   0.0002608000 secunde
-            Radix Sort in baza 10:   0.0000475000 secunde
-          Radix Sort in baza 2^16:   0.0003123000 secunde
-                       Shell Sort:   0.0001018000 secunde
-                         Tim Sort:   0.0000966000 secunde
+                         STL Sort:   0.0001004000 secunde
+                      Bubble Sort:   0.0032389000 secunde
+Quick Sort cu pivot mediana din 3:   0.0000954000 secunde
+       Quick Sort cu pivot random:   0.0001081000 secunde
+                        Heap Sort:   0.0001448000 secunde
+                       Merge Sort:   0.0002546000 secunde
+            Radix Sort in baza 10:   0.0000479000 secunde
+          Radix Sort in baza 2^16:   0.0003183000 secunde
+                       Shell Sort:   0.0001032000 secunde
+                         Tim Sort:   0.0000903000 secunde
 
 -------------------------- Test 12 ----------------------
 
                            N = 1000
                          Max = 2000000000
 
-                         STL Sort:   0.0001208000 secunde
-                      Bubble Sort:   0.0034653000 secunde
-Quick Sort cu pivot mediana din 3:   0.0000944000 secunde
-       Quick Sort cu pivot random:   0.0001060000 secunde
-                        Heap Sort:   0.0001529000 secunde
-                       Merge Sort:   0.0002490000 secunde
-            Radix Sort in baza 10:   0.0001587000 secunde
-          Radix Sort in baza 2^16:   0.0005614000 secunde
-                       Shell Sort:   0.0001113000 secunde
-                         Tim Sort:   0.0000952000 secunde
+                         STL Sort:   0.0000956000 secunde
+                      Bubble Sort:   0.0032063000 secunde
+Quick Sort cu pivot mediana din 3:   0.0000911000 secunde
+       Quick Sort cu pivot random:   0.0001075000 secunde
+                        Heap Sort:   0.0001391000 secunde
+                       Merge Sort:   0.0002426000 secunde
+            Radix Sort in baza 10:   0.0001599000 secunde
+          Radix Sort in baza 2^16:   0.0005425000 secunde
+                       Shell Sort:   0.0000993000 secunde
+                         Tim Sort:   0.0000965000 secunde
 
 -------------------------- Test 13 ----------------------
 
                            N = 100000
                          Max = 100000
 
-                         STL Sort:   0.0149166000 secunde
-                      Bubble Sort:  41.9107032000 secunde
-Quick Sort cu pivot mediana din 3:   0.0247644000 secunde
-       Quick Sort cu pivot random:   0.0271738000 secunde
-                        Heap Sort:   0.0261166000 secunde
-                       Merge Sort:   0.0307424000 secunde
-            Radix Sort in baza 10:   0.0080359000 secunde
-          Radix Sort in baza 2^16:   0.0044283000 secunde
-                       Shell Sort:   0.0225258000 secunde
-                         Tim Sort:   0.0172996000 secunde
+                         STL Sort:   0.0163438000 secunde
+                      Bubble Sort:  40.0359610000 secunde
+Quick Sort cu pivot mediana din 3:   0.0232568000 secunde
+       Quick Sort cu pivot random:   0.0282837000 secunde
+                        Heap Sort:   0.0263977000 secunde
+                       Merge Sort:   0.0310089000 secunde
+            Radix Sort in baza 10:   0.0075258000 secunde
+          Radix Sort in baza 2^16:   0.0040637000 secunde
+                       Shell Sort:   0.0214382000 secunde
+                         Tim Sort:   0.0171179000 secunde
 
 -------------------------- Test 14 ----------------------
 
                            N = 100000
                          Max = 2000000000
 
-                         STL Sort:   0.0156037000 secunde
-                      Bubble Sort:  40.1801258000 secunde
-Quick Sort cu pivot mediana din 3:   0.0257566000 secunde
-       Quick Sort cu pivot random:   0.0296747000 secunde
-                        Heap Sort:   0.0256735000 secunde
-                       Merge Sort:   0.0298783000 secunde
-            Radix Sort in baza 10:   0.0171471000 secunde
-          Radix Sort in baza 2^16:   0.0039500000 secunde
-                       Shell Sort:   0.0213913000 secunde
-                         Tim Sort:   0.0163523000 secunde
+                         STL Sort:   0.0161469000 secunde
+                      Bubble Sort:  36.4689684000 secunde
+Quick Sort cu pivot mediana din 3:   0.0236715000 secunde
+       Quick Sort cu pivot random:   0.0285295000 secunde
+                        Heap Sort:   0.0243745000 secunde
+                       Merge Sort:   0.0279008000 secunde
+            Radix Sort in baza 10:   0.0145484000 secunde
+          Radix Sort in baza 2^16:   0.0037768000 secunde
+                       Shell Sort:   0.0201086000 secunde
+                         Tim Sort:   0.0160351000 secunde
 
 -------------------------- Test 15 ----------------------
 
                            N = 1000000
                          Max = 1000000
 
-                         STL Sort:   0.1888403000 secunde
-                        Heap Sort:   0.3328817000 secunde
-                       Merge Sort:   0.3431193000 secunde
-            Radix Sort in baza 10:   0.0935908000 secunde
-          Radix Sort in baza 2^16:   0.0362724000 secunde
-                       Shell Sort:   0.2664508000 secunde
-                         Tim Sort:   0.2004048000 secunde
+                         STL Sort:   0.1857115000 secunde
+                        Heap Sort:   0.3101075000 secunde
+                       Merge Sort:   0.3202267000 secunde
+            Radix Sort in baza 10:   0.0895828000 secunde
+          Radix Sort in baza 2^16:   0.0342042000 secunde
+                       Shell Sort:   0.2545270000 secunde
+                         Tim Sort:   0.1871732000 secunde
 
 -------------------------- Test 16 ----------------------
 
                            N = 1000000
                          Max = 2000000000
 
-                         STL Sort:   0.1866650000 secunde
-                        Heap Sort:   0.3411613000 secunde
-                       Merge Sort:   0.3427152000 secunde
-            Radix Sort in baza 10:   0.1687980000 secunde
-          Radix Sort in baza 2^16:   0.0371016000 secunde
-                       Shell Sort:   0.2663873000 secunde
-                         Tim Sort:   0.2028659000 secunde
+                         STL Sort:   0.1885982000 secunde
+                        Heap Sort:   0.3045182000 secunde
+                       Merge Sort:   0.3240734000 secunde
+            Radix Sort in baza 10:   0.1572032000 secunde
+          Radix Sort in baza 2^16:   0.0320702000 secunde
+                       Shell Sort:   0.2551091000 secunde
+                         Tim Sort:   0.1873865000 secunde
 
 -------------------------- Test 17 ----------------------
 
                            N = 10000000
                          Max = 100000000
 
-                         STL Sort:   2.2296563000 secunde
-                        Heap Sort:   4.5723941000 secunde
-                       Merge Sort:   3.9175754000 secunde
-            Radix Sort in baza 10:   1.2889135000 secunde
-          Radix Sort in baza 2^16:   0.3768037000 secunde
-                       Shell Sort:   3.3709079000 secunde
-                         Tim Sort:   2.5297498000 secunde
+                         STL Sort:   2.2106115000 secunde
+                        Heap Sort:   4.2243917000 secunde
+                       Merge Sort:   3.6279095000 secunde
+            Radix Sort in baza 10:   1.2321764000 secunde
+          Radix Sort in baza 2^16:   0.3337195000 secunde
+                       Shell Sort:   3.2337769000 secunde
+                         Tim Sort:   2.3765849000 secunde
 
 -------------------------- Test 18 ----------------------
 
                            N = 10000000
                          Max = 2000000000
 
-                         STL Sort:   2.3448239000 secunde
-                        Heap Sort:   4.6047572000 secunde
-                       Merge Sort:   3.9082466000 secunde
-            Radix Sort in baza 10:   1.6409164000 secunde
-          Radix Sort in baza 2^16:   0.3551120000 secunde
-                       Shell Sort:   3.3177201000 secunde
-                         Tim Sort:   2.5286746000 secunde
+                         STL Sort:   2.2193962000 secunde
+                        Heap Sort:   4.2072554000 secunde
+                       Merge Sort:   3.6593744000 secunde
+            Radix Sort in baza 10:   1.5720475000 secunde
+          Radix Sort in baza 2^16:   0.3382317000 secunde
+                       Shell Sort:   3.2274478000 secunde
+                         Tim Sort:   2.3881634000 secunde
 
 -------------------------- Test 19 ----------------------
 
                            N = 100000000
                          Max = 100000000
 
-                         STL Sort:  27.4282247000 secunde
-                        Heap Sort:  63.6954860000 secunde
-                       Merge Sort:  41.4712962000 secunde
-            Radix Sort in baza 10:  12.7603109000 secunde
-          Radix Sort in baza 2^16:   3.7571681000 secunde
-                       Shell Sort:  38.1235269000 secunde
-                         Tim Sort:  28.1798791000 secunde
+                         STL Sort:  25.3277508000 secunde
+                        Heap Sort:  61.3778046000 secunde
+                       Merge Sort:  40.7501460000 secunde
+            Radix Sort in baza 10:  12.3774760000 secunde
+          Radix Sort in baza 2^16:   3.7807098000 secunde
+                       Shell Sort:  37.7259744000 secunde
+                         Tim Sort:  27.6458687000 secunde
 
 -------------------------- Test 20 ----------------------
 
                            N = 100000000
                          Max = 2000000000
 
-                         STL Sort:  27.6064456000 secunde
-                        Heap Sort:  62.3188557000 secunde
-                       Merge Sort:  42.0842840000 secunde
-            Radix Sort in baza 10:  15.8876357000 secunde
-          Radix Sort in baza 2^16:   3.5233161000 secunde
-                       Shell Sort:  38.3669662000 secunde
-                         Tim Sort:  28.6613401000 secunde
+                         STL Sort:  25.2887097000 secunde
+                        Heap Sort:  58.8149158000 secunde
+                       Merge Sort:  38.3348621000 secunde
+            Radix Sort in baza 10:  14.4759068000 secunde
+          Radix Sort in baza 2^16:   3.4190694000 secunde
+                       Shell Sort:  35.5641427000 secunde
+                         Tim Sort:  26.1992232000 secunde
 
