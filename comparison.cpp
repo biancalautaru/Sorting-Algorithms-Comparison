@@ -1,9 +1,11 @@
 #include <fstream>
 #include <iostream>
 #include <iomanip>
+#include <algorithm>
 #include <vector>
 #include <chrono>
 #include <random>
+#include "filegen.hpp"
 using namespace std;
 
 void heapify(vector<int> &v, int n, int k) {
@@ -241,18 +243,18 @@ int main() {
 					lastFile = 40;
 				}
 
-	string outputFile;
+	string outputFile, vectorType;
 
 	if (testsType == 1)
-		outputFile = "results/resultsRandom.txt";
+		outputFile = "results/resultsRandom.txt", vectorType = "Random";
 	else
 		if (testsType == 2)
-			outputFile = "results/resultsFewUnique.txt";
+			outputFile = "results/resultsFewUnique.txt", vectorType = "Few Unique";
 		else
 			if (testsType == 3)
-				outputFile = "results/resultsReversed.txt";
+				outputFile = "results/resultsReversed.txt", vectorType = "Reversed";
 			else
-				outputFile = "results/resultsAlmostSorted.txt";
+				outputFile = "results/resultsAlmostSorted.txt", vectorType = "Almost Sorted";
 
 	ofstream fout(outputFile);
 	fout << fixed << setprecision(10);
@@ -294,6 +296,7 @@ int main() {
 			if (time.count() < 100)
 				fout << " ";
 			fout << time.count() << " secunde\n";
+			saveResultsToCSV(fileNumber, "STL Sort", vectorType, time.count());
 		}
 		else
 			fout << "STL Sort nu a sortat corect numerele!\n";
@@ -311,6 +314,7 @@ int main() {
 				if (time.count() < 100)
 					fout << " ";
 				fout << time.count() << " secunde\n";
+				saveResultsToCSV(fileNumber, "Bubble Sort", vectorType, time.count());
 			}
 			else
 				fout << "Bubble Sort nu a sortat corect numerele!\n";
@@ -329,6 +333,7 @@ int main() {
 				if (time.count() < 100)
 					fout << " ";
 				fout << time.count() << " secunde\n";
+				saveResultsToCSV(fileNumber, "Quick Sort pivot 3", vectorType, time.count());
 			}
 			else
 				fout << "Quick Sort cu pivot mediana din 3 nu a sortat corect numerele!\n";
@@ -345,6 +350,7 @@ int main() {
 				if (time.count() < 100)
 					fout << " ";
 				fout << time.count() << " secunde\n";
+				saveResultsToCSV(fileNumber, "Quick Sort pivot random", vectorType, time.count());
 			}
 			else
 				fout << "Quick Sort cu pivot random nu a sortat corect numerele!\n";
@@ -362,6 +368,7 @@ int main() {
 			if (time.count() < 100)
 				fout << " ";
 			fout << time.count() << " secunde\n";
+			saveResultsToCSV(fileNumber, "Heap Sort", vectorType, time.count());
 		}
 		else
 			fout << "Heap Sort nu a sortat corect numerele!\n";
@@ -378,6 +385,7 @@ int main() {
 			if (time.count() < 100)
 				fout << " ";
 			fout << time.count() << " secunde\n";
+			saveResultsToCSV(fileNumber, "Merge Sort", vectorType, time.count());
 		}
 		else
 			fout << "Merge Sort nu a sortat corect numerele!\n";
@@ -394,6 +402,7 @@ int main() {
 			if (time.count() < 100)
 				fout << " ";
 			fout << time.count() << " secunde\n";
+			saveResultsToCSV(fileNumber, "Radix Sort base 10", vectorType, time.count());
 		}
 		else
 			fout << "Radix Sort in baza 10 nu a sortat corect numerele!\n";
@@ -410,6 +419,7 @@ int main() {
 			if (time.count() < 100)
 				fout << " ";
 			fout << time.count() << " secunde\n";
+			saveResultsToCSV(fileNumber, "Radix Sort base 2^16", vectorType, time.count());
 		}
 		else
 			fout << "Radix Sort in baza 2^16 nu a sortat corect numerele!\n";
@@ -426,6 +436,7 @@ int main() {
 			if (time.count() < 100)
 				fout << " ";
 			fout << time.count() << " secunde\n";
+			saveResultsToCSV(fileNumber, "Shell Sort", vectorType, time.count());
 		}
 		else
 			fout << "Shell Sort nu a sortat corect numerele!\n";
@@ -442,10 +453,10 @@ int main() {
 			if (time.count() < 100)
 				fout << " ";
 			fout << time.count() << " secunde\n";
+			saveResultsToCSV(fileNumber, "Tim Sort", vectorType, time.count());
 		}
 		else
 			fout << "Tim Sort nu a sortat corect numerele!\n";
-
 		fout << "\n";
 
 		cout << "test" << fileNumber << " finalizat!\n";

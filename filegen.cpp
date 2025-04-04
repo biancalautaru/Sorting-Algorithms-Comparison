@@ -155,3 +155,21 @@ std::vector<float> almostSortedFloat(std::string fileName, int n, float max) {  
   return v;                                                                         ///
 }                                                                                   ///
 ///---------------------------------------------------------------------------------///
+
+///---------------------------------------------------------------------------------------------------------------------///
+void saveResultsToCSV(int fileNumber, const std::string &algorithm, const std::string &vectorType, double timeTaken) {  ///
+  	std::string fileName;																								///
+  	if (fileNumber < 41)																								///
+		fileName = "sortingResultsInt.csv";																				///
+  	else																												///
+    	fileName = "sortingResultsFloat.csv";																			///
+  	std::ofstream file(fileName, std::ios::app);													 					///
+  	if (file.is_open()) {																								///
+		file << fileNumber % 10 << "," << algorithm << "," << vectorType << "," << timeTaken << "\n";						///
+		file.close();																									///
+	}																													///
+    else {																												///
+	std::cout << "File could not be opened\n";																			///
+  	}																													///
+}																														///
+///---------------------------------------------------------------------------------------------------------------------///

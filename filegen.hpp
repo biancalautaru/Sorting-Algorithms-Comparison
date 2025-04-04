@@ -48,5 +48,10 @@ std::vector<int> almostSortedInt(std::string fileName, int n, int max);
 /// same logic applied for the almostSortedInt generator, but with real numbers
 std::vector<float> almostSortedFloat(std::string fileName, int n, float max);
 
+///---------------------------------------------------------------------------------
+
+/// CSV file writer
+void saveResultsToCSV(int fileNumber, const std::string &algorithm, const std::string &vectorType, double timeTaken);
+
 #endif //FILEGEN_HPP
 
