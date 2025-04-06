@@ -165,18 +165,18 @@ std::vector<float> almostSortedFloat(std::string fileName, int n, float max) {  
 
 ///---------------------------------------------------------------------------------------------------------------------///
 void saveResultsToCSV(int fileNumber, const std::string &algorithm, const std::string &vectorType, double timeTaken) {  ///
-  	std::string fileName;                                                                                           ///
-  	if (fileNumber <= 40)										                ///
-		  fileName = "sortingResultsInt.csv";	                                                                ///
-  	else													        ///
+  	std::string fileName;                                                                                           	///
+  	if (fileNumber <= 40)										                										///
+		  fileName = "sortingResultsInt.csv";	                                                                		///
+  	else													        													///
     	fileName = "sortingResultsFloat.csv";	                                                                        ///
-  	std::ofstream file(fileName, std::ios::app);									///
-  	if (file.is_open()) {												///
-		    file << fileNumber << "," << algorithm << "," << vectorType << "," << timeTaken << "\n";		///
-		    file.close();											///
-	  }														///
-    else {														///
-	    std::cout << "File could not be opened\n";									///
-  	}														///
-}															///
+  	std::ofstream file(fileName, std::ios::app);																		///
+  	if (file.is_open()) {																								///
+		    file << fileNumber << "," << algorithm << "," << vectorType << "," << timeTaken << "\n";					///
+		    file.close();																								///
+	  }																													///
+    else {																												///
+	    std::cout << "File could not be opened\n";																		///
+  	}																													///
+}																														///
 ///---------------------------------------------------------------------------------------------------------------------///

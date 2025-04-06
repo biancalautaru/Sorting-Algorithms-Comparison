@@ -1,7 +1,7 @@
 # 📌 Sorting Algorithms Comparison
 *(project by Lăutaru Bianca-Maria and Cocu Matei-Iulian)*
 
-The following **C++ implementation** provides six different approaches for sorting various types of numerical vectors, alongside a source file that implements the **generation of the numbers** used.
+The following **C++ implementation** provides a few different approaches on sorting various types of numerical vectors, alongside a source file that implements the **generation of the numbers** used.
 
 ---
 
@@ -20,7 +20,7 @@ The **inclusive template** for these generator functions (`generationtypeValuety
 - The amount of numbers the file will contain.
 - The **maximum value** the numbers can take:
     - **Integers**: only positive values (**`[0, max]`** range).
-    - **Real numbers**: may have negative values (**`[-max, max]`** range, in some cases).
+    - **Real numbers**: may have negative values (**`[-max, max]`** range), but only for the **Random Generator**.
 
 Apart from returning a `vector<>`, the function also generates the file itself, writing down all generated numbers.
 
@@ -56,19 +56,18 @@ Using the **Mersenne Twister 19937 generator (`mt19937`)**, an instantiation of 
 
 ### 🔹 Bubble Sort
 > The classic **`O(n^2)`** comparison-based algorithm.
-- Implemented **only for small `n`**.
+- Implemented **only for small `n` values**.
 - Demonstrates the **difference between `O(nlog(n))` and quadratic complexity**.
 
 ### 🔹 Quick Sort
 > Two implementations:
-- ✅ **Median-of-3 Pivot**: Picks **best pivot** statistically (`mid = st + (dr - st) / 2`).
-- 🔀 **Random Pivot**: Picks **a pseudo-random pivot**.
+- **Median-of-3 Pivot**: Statistically, this pivot selection (`mid = st + (dr - st) / 2`) is good because it avoids worst-case scenarios that occur with simple first/last element pivoting, it's *deterministic*, it works well on *partially sorted data-sets*, and, as for the implementation, overall, it's simply easier to understand than other more complex pivot selection strategies.
+- **Random Pivot**: Picks **a pseudo-random pivot**; while performance may vary across different runs on a single data-set (introducing the concept of *non-determinism*), the random pivot selection makes the *worst-case scenario* extremely unlikely (this probability gets *significantly smaller* as `n` increases);
 
-📝 **Observation**: The **1st** implementation is **always faster** than the **2nd**.
+📝 **Observation**: The **1st** implementation is **at most times faster** than the **2nd**.
 
 ### 🔹 Heap Sort
 - **Worst-case complexity** `O(nlog(n))` (better than QuickSort).
-- **Slower** in practice than QuickSort.
 - **Poor cache performance**.
 
 ### 🔹 Merge Sort
