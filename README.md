@@ -57,12 +57,12 @@ Using the **Mersenne Twister 19937 generator (`mt19937`)**, an instantiation of 
 ### 🔹 Bubble Sort
 > The classic **`O(n^2)`** comparison-based algorithm.
 - Implemented **only for small values of `n`**.
-- Demonstrates the **difference between logarithmic and quadratic complexity**.
+- Demonstrates the **difference between `O(nlogn)` and quadratic complexity**.
 
 ### 🔹 Quick Sort
 > Two implementations:
-- **Median-of-3 Pivot**: Statistically, this pivot selection is good because it avoids worst-case scenarios that occur with simple first/last element pivoting, it's *deterministic*, it works well on *partially sorted data-sets*, and, as for the overall implementation, it's simply easier to understand than other more complex pivot selection strategies.
-- **Random Pivot**: Picks a **pseudo-random pivot**; while performance may vary across different runs on a single data-set (introducing the concept of *non-determinism*), the random pivot selection makes the *worst-case scenario* extremely unlikely (this probability gets *significantly smaller* as `n` increases);
+- **Median-of-3 Pivot**: Statistically, this pivot selection is good because it avoids worst-case scenarios that occur with simple first/last element pivoting. It's *deterministic*, it works well on *partially sorted data-sets* and, as for the overall implementation, it's simply easier to understand than other more complex pivot selection strategies.
+- **Random Pivot**: Picks a **pseudo-random pivot**; while performance may vary across different runs on a single data-set (introducing the concept of *non-determinism*), the random pivot selection makes the *worst-case scenario* extremely unlikely (this probability gets *significantly smaller* as `n` increases).
 
 📝 **Observation**: The **1st** implementation is **usually faster** than the **2nd**.
 
